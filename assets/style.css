@@ -1,0 +1,238 @@
+@font-face {
+  font-family: MinecraftTen;
+  src: url('/assets/MinecraftTen.ttf')
+}
+@font-face {
+  font-family: NotoSans;
+  src: url('/assets/NotoSans.ttf')
+}
+@keyframes screen-enter {
+  0% {
+    transform: translate(0%,100%);
+  }
+  100% {
+    transform: translate(0%,0%);
+  }
+}
+
+* {
+  --background-color: linear-gradient(rgb(14,10,44),rgba(5,0,39,1));
+  font-family: NotoSans;
+}
+
+body, #root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  background-image: var(--background-color);
+  color: white;
+}
+.fillscreen {
+  width: 100%;
+  height: 100%;
+}
+.main-menu {
+  overflow-y: scroll;
+  overflow-x: clip;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.welcome-text {
+  font-size: 24px;
+  text-align: center;
+  align-self: center;
+  width: 80%;
+  margin-top: 40px;
+  font-family: MinecraftTen;
+}
+.label {
+  align-self: start;
+  margin-top: 5vh;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  text-align: left;
+}
+.project-container {
+  width: 100%;
+  min-height: 300px;
+  background-color: #00000099;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  overflow: scroll;
+}
+.project-element {
+  min-width: 160px;
+  color: white;
+  height: 100%;
+  outline: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-image: linear-gradient(#052b95,#2a3cbf);
+  border-radius: 20px;
+  transition: 0.3s;
+  border: none;
+}
+.project-element:hover {
+  transform: scale(0.96);
+  box-shadow: 0px 0px 0px 2px white,
+  0px 0px 5px 5px #00000099;
+}
+.add-project-button {
+  min-width: 160px;
+  margin-left: 10px;
+  margin-right: 20px;
+  background-color: #1f00ff55;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  transition: 0.3s;
+  color: white;
+}
+.add-project-button:hover {
+  transform: scale(0.96);
+  box-shadow: 0px 0px 0px 2px white,
+  0px 0px 5px 5px #00000099;
+}
+.copyright {
+  margin-top: 60px;
+  font-size: 10px;
+  opacity: 0.5;
+}
+.warning {
+  margin-bottom: 60px;
+  font-size: 10px;
+  opacity: 0.5;
+}
+
+.add-project-screen {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  animation-name: screen-enter;
+  animation-duration: 0.2s;
+  background-color: #020015;
+}
+.add-header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.add-control {
+  min-width: 90vw;
+  height: 40px;
+  margin-top: 10px;
+}
+.add-input {
+  background-color: black;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  color: white;
+  box-shadow: 0px 0px 0px 2px #FFFFFF33 inset;
+}
+.add-input::placeholder {
+  color: white;
+  opacity: 0.5;
+  transform: translate(5px);
+}
+.add-input:hover {
+  box-shadow: 0px 0px 0px 2px white inset;
+}
+.add-dropdown {
+  border-radius: 10px;
+  background-color: #FFFFFF33;
+  outline: none;
+  color: white;
+  border: none;
+}
+.add-button {
+  border-radius: 10px;
+  background-color: #0043ff;
+  color: white;
+  border: none;
+}
+
+
+.editor-screen {
+  background-color: #020015;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation-name: screen-enter;
+  animation-duration: 0.2s;
+}
+.editor-header {
+  background-color: #04137b;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.editor-code-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.editor-code-lines-list {
+  width: 45px;
+  height: 100%;
+  background-color: #080d3a;
+}
+.editor-code-input {
+  background-color: #020015;
+  border: none;
+  font-family: Monospace;
+  width: calc(100% - 20px);
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  outline: none;
+  transition: 0.2s;
+}
+.editor-code-input > * {
+  font-family: Monospace;
+}
+.editor-code-input:hover {
+  background-color: #121125;
+}
+.editor-header-button {
+  justify-self: end;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  transition: 0.3s;
+  outline: none;
+  margin-right: 5px;
+}
+.editor-save-button:hover {
+  background-color: #ffffff33;
+}
+.editor-save-button:hover::after {
+  content: "Save project!";
+  color: white;
+  padding: 2px;
+  margin-left: -10px;
+  transform: translate(-100%,0%);
+  background-color: #ffffff33;
+  position: absolute;
+}
+.editor-exit-button:hover {
+  background-color: #ffffff33;
+}
+.editor-exit-button:hover::after {
+  content: "Exit project..";
+  color: white;
+  padding: 2px;
+  margin-left: -10px;
+  transform: translate(-100%,0%);
+  background-color: #ffffff33;
+  position: absolute;
+}
